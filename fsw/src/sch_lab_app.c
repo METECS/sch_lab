@@ -30,6 +30,8 @@
 /*
 ** Include Files
 */
+#include <string.h>
+
 #include "cfe.h"
 #include "cfe_sb.h"
 #include "osapi.h"
@@ -112,7 +114,23 @@ void SCH_Lab_AppMain(void)
                       if (MySchTBL->Counter[i] >= MySchTBL->PacketRate[i] )
                       {
                           MySchTBL->Counter[i] = 0;
-                          CFE_SB_SendMsg((CFE_SB_MsgPtr_t)&SCH_CmdHeaderTable[i]);
+                          {
+                              /*
+                               * Create and use a temporary structure to ensure type alignment
+                               */
+                              CFE_SB_Msg_t tempMessage;
+                              memcpy(&tempMessage, &SCH_CmdHeaderTable[i], sizeof(tempMessage));
+
+
+                              CFE_SB_SendMsg((CFE_SB_MsgPtr_t)&tempMessage);
+
+                              /*
+                               * Copy the temporary message back to the original source as a good practice
+                               * even if not used later
+                               */
+                              memcpy(&SCH_CmdHeaderTable[i], &tempMessage, sizeof(tempMessage));
+                          }
+
                       }
                 } 
                 else
