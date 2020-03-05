@@ -41,6 +41,9 @@
 
 #include "sample_app_msgids.h"
 
+#include "bcamp_io_app_msgids.h"
+#include "bcamp_mn_app_msgids.h"
+
 #if 0
 #include "sc_msgids.h"
 #include "hs_msgids.h"

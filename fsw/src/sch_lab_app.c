@@ -118,7 +118,11 @@ void SCH_Lab_AppMain(void)
                               /*
                                * Create and use a temporary structure to ensure type alignment
                                */
-                              CFE_SB_Msg_t tempMessage;
+                              union {
+                                 CFE_SB_Msg_t attr1;
+                                 CFE_SB_CmdHdr_t attr2;
+                              } tempMessage;
+
                               memcpy(&tempMessage, &SCH_CmdHeaderTable[i], sizeof(tempMessage));
 
 

@@ -46,6 +46,9 @@ SCH_LAB_ScheduleTable_t  SCH_TBL_Structure =
         TO_LAB_SEND_HK_MID,
         SAMPLE_APP_SEND_HK_MID,
 
+        BCAMP_IO_APP_SEND_HK_MID,
+        BCAMP_MN_APP_SEND_HK_MID,
+
         SCH_LAB_END_OF_TABLE          
     },
     { /*Packet Rate*/
@@ -58,6 +61,9 @@ SCH_LAB_ScheduleTable_t  SCH_TBL_Structure =
         4,  /*TO_LAB*/
         4,  /*SAMPLE_LAB*/
         
+        4,  /*BCAMP_IO_APP*/
+        4,  /*BCAMP_MN_APP*/
+
         0   /*END OF TABLE*/
     },
     {/*Counter*/
@@ -69,6 +75,9 @@ SCH_LAB_ScheduleTable_t  SCH_TBL_Structure =
         0,  /*CI_LAB*/
         0,  /*TO_LAB*/
         0,  /*SAMPLE_LAB*/
+
+        0,  /*BCAMP_IO_APP*/
+        0,  /*BCAMP_MN_APP*/
         
         0   /*END OF TABLE*/
     } 
