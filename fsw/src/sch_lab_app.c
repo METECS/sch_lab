@@ -47,7 +47,10 @@
 /*
 ** Global Variables
 */
-CFE_SB_CmdHdr_t          SCH_CmdHeaderTable[SCH_LAB_MAX_SCHEDULE_ENTRIES];
+union {
+    CFE_SB_CmdHdr_t hdr;
+    uint32          align;
+}  SCH_CmdHeaderTable[SCH_LAB_MAX_SCHEDULE_ENTRIES];
 CFE_TBL_Handle_t         TblHandles;
 SCH_LAB_ScheduleTable_t  *MySchTBL;
 
