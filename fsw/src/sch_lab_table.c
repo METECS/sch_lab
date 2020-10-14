@@ -49,6 +49,8 @@ SCH_LAB_ScheduleTable_t  SCH_TBL_Structure =
         BCAMP_IO_APP_SEND_HK_MID,
         BCAMP_MN_APP_SEND_HK_MID,
 
+        BCAMP_IO_APP_WAKEUP_MID,
+
         SCH_LAB_END_OF_TABLE          
     },
     { /*Packet Rate*/
@@ -64,6 +66,8 @@ SCH_LAB_ScheduleTable_t  SCH_TBL_Structure =
         4,  /*BCAMP_IO_APP*/
         4,  /*BCAMP_MN_APP*/
 
+        1,  /*BCAMP_IO_APP_WAKEUP_MID*/
+
         0   /*END OF TABLE*/
     },
     {/*Counter*/
@@ -78,6 +82,8 @@ SCH_LAB_ScheduleTable_t  SCH_TBL_Structure =
         
         0,  /*BCAMP_IO_APP*/
         0,  /*BCAMP_MN_APP*/
+
+        0,  /*BCAMP_IO_APP_WAKEUP_MID*/
 
         0   /*END OF TABLE*/
     } 
